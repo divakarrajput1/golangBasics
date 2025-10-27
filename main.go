@@ -14,6 +14,8 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Hello, Divakar! this is bracnh b4")
 	fmt.Fprintf(w, "Hello, Divakar! this is bracnh b4")
 	fmt.Fprintf(w, "Hello, Divakar! this is bracnh b4")
+	fmt.Fprintf(w, "Hello, Divakar! this is bracnh b6")
+	fmt.Fprintf(w, "Hello, Divakar! this is bracnh b6")
 }
 func main() {
 

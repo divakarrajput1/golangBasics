@@ -1,11 +1,9 @@
 package main
 
 import (
-	"context"
 	"fmt"
 	"log"
 	"net/http"
-	"time"
 )
 
 func helloHandler(w http.ResponseWriter, r *http.Request) {
@@ -23,37 +21,32 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Hello, Divakar! this is bracnhb8")
 	fmt.Fprintf(w, "Hello, Divakar! this is bracnhb8")
 }
+
+type Student struct {
+	Name    string
+	Age     int
+	Roll_No int
+}
+
+func UpdateName(s *Student, newName string) {
+	s.Name = newName
+}
 func main() {
 
-	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
-	defer cancel()
-
-	go work(ctx)
-
-	time.Sleep(5 * time.Second)
 	fmt.Println("Done")
 
 	log.Printf("Hello %s Did you logged in?", "Divakar,")
-	//log.Fatalf("Hello something went wrong")
+
 	log.Println("Hello Divakar")
 	log.Println("Hello Divakarb7")
 	log.Println("Hello Divakarb7")
 	log.Println("Hello Divakarb7")
 	log.Println("Hello Divakar8")
+
+	student := &Student{Name: "Kirti", Age: 21, Roll_No: 143}
+	UpdateName(student, "Divakar")
+	fmt.Println("Student Name:", student.Name)
 	http.HandleFunc("/hello", helloHandler)
 	fmt.Println("Server is running on port 8080")
 	http.ListenAndServe(":8080", nil)
-}
-
-func work(ctx context.Context) {
-	for {
-		select {
-		case <-ctx.Done():
-			fmt.Println("Stop Working")
-			return
-		default:
-			fmt.Println("Working...")
-			time.Sleep(1 * time.Second)
-		}
-	}
 }

@@ -23,6 +23,16 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Hello, Divakar! this is bracnhb8")
 	fmt.Fprintf(w, "Hello, Divakar! this is bracnhb8")
 }
+
+type Student struct {
+	Name    string
+	Age     int
+	Roll_no int
+}
+
+func UpdateName(s *Student, newName string) {
+	s.Name = newName
+}
 func main() {
 
 	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
@@ -30,6 +40,9 @@ func main() {
 
 	go work(ctx)
 
+	student := &Student{Name: "Divakar", Age: 25, Roll_no: 101}
+	UpdateName(student, "Kirti")
+	fmt.Println("After Update:", student.Name)
 	time.Sleep(5 * time.Second)
 	fmt.Println("Done")
 

@@ -18,6 +18,8 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Hello, Divakar! this is bracnhb5")
 	fmt.Fprintf(w, "Hello, Divakar! this is bracnhb5")
 	fmt.Fprintf(w, "Hello, Divakar! this is bracnhb5")
+	fmt.Fprintf(w, "Hello, Divakar! this is bracnhb8")
+	fmt.Fprintf(w, "Hello, Divakar! this is bracnhb8")
 }
 
 type Student struct {
@@ -45,6 +47,7 @@ func main() {
 	log.Println("Hello Divakarb7")
 	log.Println("Hello Divakarb7")
 	log.Println("Hello Divakarb7")
+	log.Println("Hello Divakar8")
 
 	student := &Student{Name: "Kirti", Age: 21, Roll_No: 143}
 	UpdateName(student, "Divakar")

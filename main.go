@@ -36,7 +36,7 @@ func main() {
 	fmt.Println("Done")
 
 	log.Printf("Hello %s Did you logged in?", "Divakar,")
-
+	//log.Fatalf("Hello something went wrong")
 	log.Println("Hello Divakar")
 	log.Println("Hello Divakarb7")
 	log.Println("Hello Divakarb7")
